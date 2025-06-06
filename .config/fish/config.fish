@@ -71,5 +71,4 @@ set -gx ANDROID_HOME ~/Android/Sdk
 set -gx EDITOR nvim
 set -gx TERM xterm-kitty
 
-set
 set -Ux fish_user_paths ~/.config/composer/vendor/bin $fish_user_paths
