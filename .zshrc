@@ -85,7 +85,6 @@ plugins=(
 	z
 	zsh-autosuggestions
 	zsh-syntax-highlighting
-	fast-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -126,7 +125,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-alias ls='exa -1 -F --icons'
+alias ls='eza -1 -F --icons'
 alias g='git'
 alias fetch='fastfetch'
 alias inv='nvim $(fzf -m --preview="bat --color=always {}")'

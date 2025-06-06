@@ -17,7 +17,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-alias ls='exa -1 -F --icons'
+alias ls='eza -1 -F --icons'
 alias g='git'
 alias fetch='fastfetch'
 alias inv='nvim $(fzf -m --preview="bat --color=always {}")'
@@ -54,21 +54,21 @@ export FZF_CTRL_R_OPTS="
 # Print tree structure in the preview window
 export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target
-  --preview 'exa --icons --tree --color=always {}'"
+  --preview 'eza --icons --tree --color=always {}'"
 
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-set -x STARSHIP_FISH_PRIVATE_MODE $fish_private_mode
+#set -x STARSHIP_FISH_PRIVATE_MODE $fish_private_mode
 
 set -Ux FZF_DEFAULT_OPTS '--color=fg:#ebdbb2,bg:#1d2021,hl:#b16286 --color=fg+:#689d6a,bg+:#32302f,hl+:#d3869b --color=info:#d65d0e,prompt:#458588,pointer:#fe8019 --color=marker:#8ec07c,spinner:#cc241d,header:#fabd2f'
 
-function __starship_is_private_hook --on-variable fish_private_mode
-    set -x STARSHIP_FISH_PRIVATE_MODE $fish_private_mode
-end
+#function __starship_is_private_hook --on-variable fish_private_mode
+#    set -x STARSHIP_FISH_PRIVATE_MODE $fish_private_mode
+#end
 
-set -gx ANDROID_HOME /home/eucalyptus22/Android/Sdk
+set -gx ANDROID_HOME ~/Android/Sdk
 set -gx EDITOR nvim
 set -gx TERM xterm-kitty
 
-#set -Ux fish_user_paths ~/.config/composer/vendor/bin $fish_user_paths
+set -Ux fish_user_paths ~/.config/composer/vendor/bin $fish_user_paths
