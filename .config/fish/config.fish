@@ -1,9 +1,12 @@
+# Init Starship prompt
 starship init fish | source
 
+# Greeting script
 function fish_greeting
     colorscript -r
 end
 
+# Yazi function to update PWD
 function y
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
     yazi $argv --cwd-file="$tmp"
@@ -13,10 +16,36 @@ function y
     rm -f -- "$tmp"
 end
 
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
+# Set universal environment variables
+set -Ux FZF_DEFAULT_OPTS '--color=fg:#ebdbb2,bg:#1d2021,hl:#b16286 --color=fg+:#689d6a,bg+:#32302f,hl+:#d3869b --color=info:#d65d0e,prompt:#458588,pointer:#fe8019 --color=marker:#8ec07c,spinner:#cc241d,header:#fabd2f'
+set -Ux fish_user_paths ~/.config/composer/vendor/bin $fish_user_paths
 
+# Set global environment variables
+set -gx ANDROID_HOME ~/Android/Sdk
+set -gx EDITOR nvim
+set -gx TERM xterm-kitty
+
+# Set FZF behavior
+set -gx FZF_DEFAULT_COMMAND 'fd --type file --follow --hidden --exclude .git'
+set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
+
+set -gx FZF_CTRL_T_OPTS '
+  --walker-skip .git,node_modules,target
+  --preview "bat -n --color=always {}"
+  --bind "ctrl-/:change-preview-window(down|hidden|)"'
+
+set -gx FZF_CTRL_R_OPTS '
+  --color header:italic
+  --header "find the command"'
+
+set -gx FZF_ALT_C_OPTS '
+  --walker-skip .git,node_modules,target
+  --preview "eza --icons --tree --color=always {}"'
+
+# FZF key bindings
+fzf --fish | source
+
+# Aliases
 alias ls='eza -1 -F --icons'
 alias g='git'
 alias fetch='fastfetch'
@@ -38,38 +67,7 @@ alias phpdir='cd /var/www/html/'
 alias brave='brave-browser'
 alias calendar='calcurse'
 
-# Set up fzf key bindings
-fzf --fish | source
-
-# Preview file content using bat (https://github.com/sharkdp/bat)
-export FZF_CTRL_T_OPTS="
-  --walker-skip .git,node_modules,target
-  --preview 'bat -n --color=always {}'
-  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
-
-# CTRL-Y to copy the command into clipboard using pbcopy
-export FZF_CTRL_R_OPTS="
-  --color header:italic
-  --header 'find the command'"
-
-# Print tree structure in the preview window
-export FZF_ALT_C_OPTS="
-  --walker-skip .git,node_modules,target
-  --preview 'eza --icons --tree --color=always {}'"
-
-export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-#set -x STARSHIP_FISH_PRIVATE_MODE $fish_private_mode
-
-set -Ux FZF_DEFAULT_OPTS '--color=fg:#ebdbb2,bg:#1d2021,hl:#b16286 --color=fg+:#689d6a,bg+:#32302f,hl+:#d3869b --color=info:#d65d0e,prompt:#458588,pointer:#fe8019 --color=marker:#8ec07c,spinner:#cc241d,header:#fabd2f'
-
-#function __starship_is_private_hook --on-variable fish_private_mode
-#    set -x STARSHIP_FISH_PRIVATE_MODE $fish_private_mode
-#end
-
-set -gx ANDROID_HOME ~/Android/Sdk
-set -gx EDITOR nvim
-set -gx TERM xterm-kitty
-
-set -Ux fish_user_paths ~/.config/composer/vendor/bin $fish_user_paths
+# Optional: for interactive-specific commands
+if status is-interactive
+    # Interactive session setup
+end
