@@ -9,7 +9,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # Java & Android (commented out, activate if needed)
-export ANDROID_HOME=$HOME/Android/Sdk
+# export ANDROID_HOME=$HOME/Android/Sdk
 # export JAVA_HOME=/usr/lib/jvm/java-24-openjdk
 # export PATH=$PATH:$JAVA_HOME/bin
 # export PATH=$PATH:$ANDROID_HOME/emulator/emulator

@@ -23,7 +23,7 @@ set -Ux FZF_DEFAULT_OPTS '--color=fg:#ebdbb2,bg:#1d2021,hl:#b16286 --color=fg+:#
 set -Ux fish_user_paths ~/.config/composer/vendor/bin $fish_user_paths
 
 # Set global environment variables
-set -gx ANDROID_HOME ~/Android/Sdk
+#set -gx ANDROID_HOME ~/Android/Sdk
 set -gx EDITOR nvim
 set -gx TERM xterm-kitty
 
