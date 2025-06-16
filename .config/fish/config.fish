@@ -1,5 +1,7 @@
 # Init Starship prompt
 starship init fish | source
+# init Zoxide
+zoxide init fish | source
 
 # Greeting script
 function fish_greeting
