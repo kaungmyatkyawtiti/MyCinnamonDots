@@ -99,6 +99,7 @@ alias dots='cd ~/MyCinnamonDots/'
 alias phpdir='cd /var/www/html/'
 alias brave='brave-browser'
 alias calendar='calcurse'
+alias less='less -NRX'
 
 # =========================
 # FUNCTIONS
