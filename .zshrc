@@ -14,6 +14,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # export PATH=$PATH:$JAVA_HOME/bin
 # export PATH=$PATH:$ANDROID_HOME/emulator/emulator
 # export PATH=$PATH:$ANDROID_HOME/platform-tools
+export JAVA_HOME=/usr/lib/jvm/java-24-openjdk
+export MAVEN_OPTS="--enable-native-access=ALL-UNNAMED"
 
 # =========================
 # ZSH THEME & BEHAVIOR
@@ -100,6 +102,7 @@ alias phpdir='cd /var/www/html/'
 alias brave='brave-browser'
 alias calendar='calcurse'
 alias less='less -NRX'
+alias gitfiles='cd ~/MyGitFiles/'
 
 # =========================
 # FUNCTIONS

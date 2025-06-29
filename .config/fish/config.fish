@@ -21,6 +21,8 @@ end
 # Set universal environment variables
 set -Ux FZF_DEFAULT_OPTS '--color=fg:#ebdbb2,bg:#1d2021,hl:#b16286 --color=fg+:#689d6a,bg+:#32302f,hl+:#d3869b --color=info:#d65d0e,prompt:#458588,pointer:#fe8019 --color=marker:#8ec07c,spinner:#cc241d,header:#fabd2f'
 set -Ux fish_user_paths ~/.config/composer/vendor/bin $fish_user_paths
+set -Ux JAVA_HOME /usr/lib/jvm/java-24-openjdk
+set -Ux MAVEN_OPTS "--enable-native-access=ALL-UNNAMED"
 
 # Set global environment variables
 #set -gx ANDROID_HOME ~/Android/Sdk
@@ -69,6 +71,7 @@ alias phpdir='cd /var/www/html/'
 alias brave='brave-browser'
 alias calendar='calcurse'
 alias less='less -NRX'
+alias gitfiles='cd ~/MyGitFiles/'
 
 # Optional: for interactive-specific commands
 if status is-interactive
