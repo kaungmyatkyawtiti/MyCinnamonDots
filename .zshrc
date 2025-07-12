@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/nott_eucalyptus/.zsh/completions:"* ]]; then export FPATH="/home/nott_eucalyptus/.zsh/completions:$FPATH"; fi
 # =========================
 # PATH & ENVIRONMENT SETUP
 # =========================
@@ -124,3 +126,7 @@ function y() {
 colorscript -r
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+. "/home/nott_eucalyptus/.deno/env"
+# Initialize zsh completions (added by deno install script)
+autoload -Uz compinit
+compinit
