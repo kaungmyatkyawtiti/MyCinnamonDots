@@ -105,6 +105,7 @@ alias brave='brave-browser'
 alias calendar='calcurse'
 alias less='less -NRX'
 alias gitfiles='cd ~/MyGitFiles/'
+alias rain='terminal-rain --rain-color white --lightning-color yellow'
 
 # =========================
 # FUNCTIONS
