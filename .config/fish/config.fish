@@ -85,3 +85,4 @@ set --export PATH $BUN_INSTALL/bin $PATH
 
 # Created by `pipx` on 2025-07-13 08:42:29
 set PATH $PATH /home/nott_eucalyptus/.local/bin
+fish_vi_key_bindings
