@@ -64,7 +64,13 @@ source $ZSH/oh-my-zsh.sh
 source <(fzf --zsh)
 
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
-export FZF_DEFAULT_OPTS='--color=fg:#ebdbb2,bg:#1d2021,hl:#b16286 --color=fg+:#689d6a,bg+:#32302f,hl+:#d3869b --color=info:#d65d0e,prompt:#458588,pointer:#fe8019 --color=marker:#8ec07c,spinner:#cc241d,header:#fabd2f'
+
+export FZF_DEFAULT_OPTS="\
+  --color=fg:#ebdbb2,bg:#1d2021,hl:#b16286 \
+  --color=fg+:#689d6a,bg+:#32302f,hl+:#d3869b \
+  --color=info:#d65d0e,prompt:#458588,pointer:#fe8019 \
+  --color=marker:#8ec07c,spinner:#cc241d,header:#fabd2f"
+
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # =========================
