@@ -1,0 +1,1 @@
+source "/home/nott_eucalyptus/.deno/env.fish"
