@@ -98,7 +98,7 @@ format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
 disabled = true
 
 [shell]
-fish_indicator = 'fish'
+fish_indicator = 'fsh'
 powershell_indicator = '_'
 unknown_indicator = 'mystery shell'
 style = 'fg:color_blue'
