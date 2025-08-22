@@ -4,13 +4,16 @@ A curated set of dotfiles for **Cinnamon** and related tools, designed for a sle
 
 Includes configurations for:
 
- `bat/`  
- `fastfetch/`  
- `fish/`  
- `kitty/`  
- `nvim/`  
- `starship.toml.bak`  
- `yazi/`  
+`bat/`  
+`btop/`  
+`cava/`  
+`conky/`  
+`fastfetch/`  
+`fish/`  
+`kitty/`  
+`nvim/`  
+`starship`  
+`yazi/`  
 `.tmux`  
 `.zshrc`
 
@@ -26,10 +29,17 @@ Configured for **Cinnamon** to provide a smooth, intuitive, and visually appeali
 - **Kitty**: Modern, GPU-accelerated terminal.  
 - **Fish shell**: Friendly shell with syntax highlighting, autosuggestions, and Starship prompt for a sleek command line.  
 - **Zsh**: Alternative shell with custom configuration for productivity and customization.  
+- **Starship**: Universal prompt for an elegant command-line experience.  
 
-**📊 System Info**  
+**📊 System Info & Monitoring**  
 
 - **fastfetch**: Beautiful, quick system information in the terminal.  
+- **btop**: Interactive, terminal-based system monitor.  
+- **Conky**: Desktop system info widgets for quick glance statistics.  
+
+**🎵 Media Visualizer**  
+
+- **cava**: Terminal-based audio visualizations for music and sound.  
 
 **📂 File & Text Utilities**  
 
@@ -49,4 +59,4 @@ Configured for **Cinnamon** to provide a smooth, intuitive, and visually appeali
 
 ---
 
-This setup aims to provide a minimal, beautiful, and functional Linux environment focused on productivity and aesthetics within Cinnamon.
+This setup provides a minimal, beautiful, and functional Linux environment focused on productivity and aesthetics within Cinnamon.
