@@ -7,3 +7,4 @@ vim.opt.mouse = ""
 vim.g.snacks_scroll = false
 vim.opt.laststatus = 3
 vim.opt.splitkeep = "screen"
+vim.opt.foldmethod = "manual"
