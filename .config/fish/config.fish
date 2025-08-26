@@ -91,3 +91,10 @@ set --export PATH $BUN_INSTALL/bin $PATH
 # Created by `pipx` on 2025-07-13 08:42:29
 set PATH $PATH /home/nott_eucalyptus/.local/bin
 fish_vi_key_bindings
+
+# pnpm
+set -gx PNPM_HOME "/home/nott_eucalyptus/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
