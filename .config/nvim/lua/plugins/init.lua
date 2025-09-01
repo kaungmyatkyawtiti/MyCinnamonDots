@@ -30,6 +30,11 @@ return {
   {
     "folke/zen-mode.nvim",
     opts = require("configs.zen-mode"),
+  },
+
+  {
+    "lewis6991/gitsigns.nvim",
+    enabled = false,
   }
 
   -- These are some examples, uncomment them if you want to see them work!
