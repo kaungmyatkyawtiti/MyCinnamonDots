@@ -20,10 +20,10 @@ map({ "n", "t" }, "<A-i>", function()
     pos = "float",
     id = "floatTerm",
     float_opts = {
-      row = 0.05,   -- vertical offset (0–1)
-      col = 0.05,   -- horizontal offset (0–1)
-      width = 0.9,  -- 90% of screen width
-      height = 0.8, -- 50% of screen height
+      row = 0.05,    -- vertical offset (0–1)
+      col = 0.15,    -- horizontal offset (0–1)
+      width = 0.65,  -- screen width %
+      height = 0.75, -- screen height %
     }
   })
 end, { desc = "terminal toggle floating term" })
