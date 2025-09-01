@@ -19,8 +19,18 @@ return {
   {
     "stevearc/conform.nvim",
     event = 'BufWritePre', -- uncomment for format on save
-    opts = require "configs.conform",
+    opts = require("configs.conform"),
   },
+
+  {
+    "tpope/vim-fugitive",
+    cmd = { "Git", "Gdiffsplit", "Gblame", "Gstatus" }, -- load only when you call these
+  },
+
+  {
+    "folke/zen-mode.nvim",
+    opts = require("configs.zen-mode"),
+  }
 
   -- These are some examples, uncomment them if you want to see them work!
   -- test new blink
