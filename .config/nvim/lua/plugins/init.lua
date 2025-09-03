@@ -35,6 +35,15 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     enabled = false,
+  },
+
+  {
+    "b0o/incline.nvim",
+    event = "BufReadPre",
+    enabled = true,
+    config = function()
+      require("configs.incline")
+    end,
   }
 
   -- These are some examples, uncomment them if you want to see them work!
