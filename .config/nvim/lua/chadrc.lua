@@ -31,4 +31,9 @@ M.ui = {
   },
 }
 
+
+vim.schedule(function()
+  require("customs.autocmds")
+end)
+
 return M

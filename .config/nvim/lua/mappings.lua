@@ -18,6 +18,16 @@ map("n", "<leader>wm", function()
   require("zen-mode").toggle()
 end, { desc = "Toggle Zen Mode" })
 
+-- LazyVim-style: <leader>wo = close all except current
+map("n", "<leader>wd", function()
+  require("customs.utils.buffers").buf_close_others(false)
+end, { desc = "Close other buffers", noremap = true, silent = true })
+
+-- force (like :BufOnly!)
+map("n", "<leader>wD", function()
+  require("customs.utils.buffers").buf_close_others(true)
+end, { desc = "Close other buffers (force)", noremap = true, silent = true })
+
 -- Terminal toggle
 map({ "n", "t" }, "<A-i>", function()
   require("nvchad.term").toggle({
