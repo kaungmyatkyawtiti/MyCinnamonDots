@@ -37,7 +37,7 @@ local options = {
     use_languagetree = true,
   },
 
-  indent = { enable = true },
+  indent = { enable = false },
 }
 
 require("nvim-treesitter.configs").setup(options)
