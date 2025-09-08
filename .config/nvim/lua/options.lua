@@ -4,7 +4,7 @@ require "nvchad.options"
 
 local o = vim.o
 
-o.mouse = "" -- only enable in insert mode
+o.mouse = ""
 o.wrap = false
 
 -- o.cursorlineopt ='both' -- to enable cursorline!
