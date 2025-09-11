@@ -29,7 +29,9 @@ local options = {
     "json5",
     "tsx",
     "markdown_inline",
-    "meson"
+    "meson",
+    "php",
+    "phpdoc"
   },
 
   highlight = {
