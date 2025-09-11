@@ -31,14 +31,4 @@ M.ui = {
   },
 }
 
-vim.schedule(function()
-  require("customs.autocmds")
-end)
-
--- override highlights to use undercurl for errors
-vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", { undercurl = true, sp = "#fb4934" })
-vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", { undercurl = true, sp = "#fabd2f" })
-vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo", { undercurl = true, sp = "#83a598" })
-vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint", { undercurl = true, sp = "#8ec07c" })
-
 return M
