@@ -29,7 +29,7 @@ return {
 
   {
     "folke/zen-mode.nvim",
-    opts = require("configs.zen-mode"),
+    opts = require("configs.zen-mode")
   },
 
   {
@@ -38,13 +38,11 @@ return {
   },
 
   {
-    "b0o/incline.nvim",
-    event = "BufReadPre",
-    enabled = true,
-    config = function()
-      require("configs.incline")
-    end,
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = require("configs.indent-blankline")
   },
+
   -- These are some examples, uncomment them if you want to see them work!
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
