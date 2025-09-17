@@ -1,7 +1,7 @@
 require "nvchad.mappings"
 
 local map = vim.keymap.set
-local set_hl = vim.api.nvim_set_hl
+-- local set_hl = vim.api.nvim_set_hl
 local set_keymap = vim.api.nvim_set_keymap
 
 -- My Custom keybindings
@@ -53,10 +53,10 @@ vim.schedule(function()
 end)
 
 -- override highlights to use undercurl for errors
-set_hl(0, "DiagnosticUnderlineError", { undercurl = true, sp = "#fb4934" })
-set_hl(0, "DiagnosticUnderlineWarn", { undercurl = true, sp = "#fabd2f" })
-set_hl(0, "DiagnosticUnderlineInfo", { undercurl = true, sp = "#83a598" })
-set_hl(0, "DiagnosticUnderlineHint", { undercurl = true, sp = "#8ec07c" })
+-- set_hl(0, "DiagnosticUnderlineError", { undercurl = true, sp = "#fb4934" })
+-- set_hl(0, "DiagnosticUnderlineWarn", { undercurl = true, sp = "#fabd2f" })
+-- set_hl(0, "DiagnosticUnderlineInfo", { undercurl = true, sp = "#83a598" })
+-- set_hl(0, "DiagnosticUnderlineHint", { undercurl = true, sp = "#8ec07c" })
 
 -- Custom split resize keys
 set_keymap('n', '<C-w>>', '10<C-w>>', { noremap = true, silent = true })
