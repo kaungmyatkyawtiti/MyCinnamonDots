@@ -10,8 +10,6 @@ local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-local lspconfig = require("lspconfig")
-
 -- all servers you want active
 local servers = {
   "eslint",
@@ -22,28 +20,22 @@ local servers = {
   "jdtls",
   "jsonls",
   "html",
-  "lua_ls",
 }
 
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_init = on_init,
+for _, server in ipairs(servers) do
+  vim.lsp.config(server, {
     on_attach = on_attach,
+    on_init = on_init,
     capabilities = capabilities,
-  }
+  })
 end
 
-lspconfig.lua_ls.setup({
+vim.lsp.config("lua_ls", {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
-
   settings = {
     Lua = {
-      diagnostics = {
-        enable = false, -- disable lua_ls diagnostics
-        -- globals = { "vim" },
-      },
       workspace = {
         library = {
           vim.fn.expand("$VIMRUNTIME/lua"),
@@ -59,9 +51,10 @@ lspconfig.lua_ls.setup({
   },
 })
 
-lspconfig.emmet_language_server.setup {
-  on_init = on_init,
+-- Emmet (restricted filetypes)
+vim.lsp.config("emmet_language_server", {
   on_attach = on_attach,
+  on_init = on_init,
   capabilities = capabilities,
   filetypes = {
     "css",
@@ -77,25 +70,31 @@ lspconfig.emmet_language_server.setup {
     "scss",
     "typescriptreact",
   },
-}
+})
 
-lspconfig.ts_ls.setup {
-  on_init = on_init,
+-- TS (disable suggestions)
+vim.lsp.config("ts_ls", {
   on_attach = on_attach,
+  on_init = on_init,
   capabilities = capabilities,
   init_options = {
     preferences = {
       disableSuggestions = true,
     },
   },
-}
+})
 
-lspconfig.intelephense.setup {
+vim.lsp.config("intelephense", {
   on_init = on_init,
   on_attach = on_attach,
   capabilities = capabilities,
-  root_dir = function(_)
-    return vim.loop.cwd()
+  root_dir = function(bufnr, on_dir)
+    local fname = vim.api.nvim_buf_get_name(bufnr)
+    local cwd = assert(vim.uv.cwd())
+    local root = vim.fs.root(fname, { 'composer.json', '.git' })
+
+    -- prefer cwd if root is a descendant
+    on_dir(root and vim.fs.relpath(cwd, root) and cwd)
   end,
   settings = {
     intelephense = {
@@ -104,58 +103,24 @@ lspconfig.intelephense.setup {
       },
     },
   },
-}
+})
 
--- lspconfig.gopls.setup {
---   on_init = on_init,
---   on_attach = on_attach,
---   capabilities = capabilities,
---   settings = {
---     gopls = {
---       completeUnimported = true,
---       usePlaceholders = true,
---       analyses = {
---         unusedparams = true,
---       },
---     },
---   },
--- }
-
-lspconfig.cssls.setup {
-  on_init = on_init,
+-- CSS (ignore unknown at-rules)
+vim.lsp.config("cssls", {
   on_attach = on_attach,
+  on_init = on_init,
   capabilities = capabilities,
   settings = {
     css = {
-      lint = {
-        unknownAtRules = "ignore",
-      },
+      lint = { unknownAtRules = "ignore" },
     },
   },
-}
+})
 
--- lspconfig.pylsp.setup {
---   on_init = on_init,
---   on_attach = on_attach,
---   capabilities = capabilities,
---   settings = {
---     pylsp = {
---       plugins = {
---         mccabe = {
---           threshold = 50,
---         },
---         pycodestyle = {
---           ignore = { "E501", "W503" },
---           maxLineLength = 120,
---         },
---       },
---     },
---   },
--- }
-
-lspconfig.tailwindcss.setup {
-  on_init = on_init,
+-- Tailwind (custom filetypes)
+vim.lsp.config("tailwindcss", {
   on_attach = on_attach,
+  on_init = on_init,
   capabilities = capabilities,
   filetypes = {
     "aspnetcorerazor",
@@ -208,4 +173,49 @@ lspconfig.tailwindcss.setup {
     "typescriptreact",
     "vue",
   },
+})
+
+-- vim.lsp.config("gopls", {
+--   on_init = on_init,
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   settings = {
+--     gopls = {
+--       completeUnimported = true,
+--       usePlaceholders = true,
+--       analyses = {
+--         unusedparams = true,
+--       },
+--     },
+--   },
+-- })
+
+-- vim.lsp.config("pylsp", {
+--   on_init = on_init,
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   settings = {
+--     pylsp = {
+--       plugins = {
+--         mccabe = {
+--           threshold = 50,
+--         },
+--         pycodestyle = {
+--           ignore = { "E501", "W503" },
+--           maxLineLength = 120,
+--         },
+--       },
+--     },
+--   },
+-- })
+
+vim.lsp.enable(servers)
+
+vim.lsp.enable {
+  "lua_ls",
+  "ts_ls",
+  "emmet_language_server",
+  "intelephense",
+  "tailwindcss",
+  "cssls",
 }
