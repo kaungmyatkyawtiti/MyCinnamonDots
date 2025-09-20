@@ -3,7 +3,7 @@ local options = {
     lua = { "stylua" },
     -- css = { "prettier" },
     -- html = { "prettier" },
-    php = { "php-cs-fixer" },
+    -- php = { "php_cs_fixer" },
   },
 
   format_on_save = {
