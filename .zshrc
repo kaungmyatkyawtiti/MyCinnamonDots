@@ -131,7 +131,8 @@ function y() {
 # FINAL INIT
 # =========================
 
-colorscript -r
+# colorscript -r
+
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 . "/home/nott_eucalyptus/.deno/env"
