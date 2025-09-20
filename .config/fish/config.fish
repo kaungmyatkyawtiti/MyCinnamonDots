@@ -4,9 +4,11 @@ starship init fish | source
 zoxide init fish | source
 
 # Greeting script
-function fish_greeting
-    colorscript -r
-end
+# function fish_greeting
+#     colorscript -r
+# end
+
+set fish_greeting ""
 
 # Yazi function to update PWD
 function y
