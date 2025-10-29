@@ -97,6 +97,6 @@ fish_vi_key_bindings
 # pnpm
 set -gx PNPM_HOME "/home/nott_eucalyptus/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
