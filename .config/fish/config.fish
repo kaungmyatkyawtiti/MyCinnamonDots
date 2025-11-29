@@ -8,6 +8,10 @@ zoxide init fish | source
 #     colorscript -r
 # end
 
+function fish_command_not_found
+    __fish_default_command_not_found_handler $argv
+end
+
 set fish_greeting ""
 
 # Yazi function to update PWD
