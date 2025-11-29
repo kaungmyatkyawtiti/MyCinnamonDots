@@ -48,10 +48,12 @@ ZSH_THEME="robbyrussell"
 # =========================
 
 plugins=(
-	git
+	# git
+  gitfast
 	z
 	zsh-autosuggestions
-	zsh-syntax-highlighting
+	# zsh-syntax-highlighting
+  fast-syntax-highlighting
   zsh-vi-mode
 )
 
