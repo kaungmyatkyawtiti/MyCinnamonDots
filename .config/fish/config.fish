@@ -1,9 +1,10 @@
-# Init Starship prompt
+# Init starship prompt
 starship init fish | source
-# init Zoxide
+
+# Init zoxide
 zoxide init fish | source
 
-# Greeting script
+# Greeting 
 # function fish_greeting
 #     colorscript -r
 # end
@@ -24,7 +25,7 @@ function y
     rm -f -- "$tmp"
 end
 
-# Set universal environment variables
+# Set universal env variables
 set -gx FZF_DEFAULT_OPTS \
     '--color=fg:#ebdbb2,bg:#1d2021,hl:#b16286' \
     '--color=fg+:#689d6a,bg+:#32302f,hl+:#d3869b' \
@@ -35,7 +36,7 @@ set -gx fish_user_paths ~/.config/composer/vendor/bin $fish_user_paths
 set -gx JAVA_HOME /usr/lib/jvm/java-24-openjdk
 set -gx MAVEN_OPTS "--enable-native-access=ALL-UNNAMED"
 
-# Set global environment variables
+# Set global env variables
 #set -gx ANDROID_HOME ~/Android/Sdk
 set -gx EDITOR nvim
 set -gx TERM xterm-kitty
@@ -96,10 +97,13 @@ set --export PATH $BUN_INSTALL/bin $PATH
 
 # Created by `pipx` on 2025-07-13 08:42:29
 set PATH $PATH /home/nott_eucalyptus/.local/bin
+
+# Fish vi key bindings
 fish_vi_key_bindings
 
 # pnpm
 set -gx PNPM_HOME "/home/nott_eucalyptus/.local/share/pnpm"
+
 if not string match -q -- $PNPM_HOME $PATH
     set -gx PATH "$PNPM_HOME" $PATH
 end
