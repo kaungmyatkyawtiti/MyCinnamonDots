@@ -1,4 +1,5 @@
-# Add deno completions to search path
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+
 if [[ ":$FPATH:" != *":/home/nott_eucalyptus/.zsh/completions:"* ]]; then export FPATH="/home/nott_eucalyptus/.zsh/completions:$FPATH"; fi
 # =========================
 # PATH & ENVIRONMENT SETUP
@@ -16,14 +17,14 @@ export ZSH="$HOME/.oh-my-zsh"
 # export PATH=$PATH:$JAVA_HOME/bin
 # export PATH=$PATH:$ANDROID_HOME/emulator/emulator
 # export PATH=$PATH:$ANDROID_HOME/platform-tools
-export JAVA_HOME=/usr/lib/jvm/java-24-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-latest-openjdk
 export MAVEN_OPTS="--enable-native-access=ALL-UNNAMED"
 
 # =========================
 # ZSH THEME & BEHAVIOR
 # =========================
 
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 # CASE_SENSITIVE="true"
@@ -137,7 +138,9 @@ function y() {
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
-. "/home/nott_eucalyptus/.deno/env"
+
 # Initialize zsh completions (added by deno install script)
+. "/home/nott_eucalyptus/.deno/env"
+
 autoload -Uz compinit
 compinit

@@ -1,0 +1,43 @@
+execx($(starship init xonsh))
+$VI_MODE = True
+
+# Aliases
+aliases['ls']        = ['eza', '-1', '-F', '--icons']
+aliases['g']         = ['git']
+aliases['fetch']     = ['fastfetch']
+aliases['inv']       = ['nvim', '$(fzf -m --preview="bat --color=always {}")']
+aliases['kicat']     = ['kitten', 'icat']
+aliases['py']        = ['python3']
+aliases['tock']      = ['tock', '-c', '-s', '-C', '211,134,155']
+aliases['t']         = ['tmux']
+aliases['lg']        = ['lazygit']
+aliases['cd..']      = ['cd', '..']
+
+# Directory shortcuts
+aliases['myhelpers'] = ['cd', '~/MyHelpers/']
+aliases['mytest']    = ['cd', '~/MyTestingProjects/']
+aliases['rusttest']  = ['cd', '~/MyTestingProjects/rust_testings/']
+aliases['jstest']    = ['cd', '~/MyTestingProjects/javascript_testings/']
+aliases['javatest']  = ['cd', '~/MyTestingProjects/java_testings/']
+aliases['mypj']      = ['cd', '~/MyProjects/']
+aliases['mydots']    = ['cd', '~/MyCinnamonDots/']
+aliases['phpdir']    = ['cd', '/var/www/html/']
+aliases['gitfiles']  = ['cd', '~/MyGitFiles/']
+
+# Apps
+aliases['brave']     = ['brave-browser']
+aliases['calendar']  = ['calcurse']
+aliases['less']      = ['less', '-NRX']
+
+# Effects
+aliases['rain']      = [
+    'terminal-rain',
+    '--rain-color', 'white',
+    '--lightning-color', 'yellow'
+]
+
+$JAVA_HOME = "/usr/lib/jvm/java-latest-openjdk"
+$MAVEN_OPTS = "--enable-native-access=ALL-UNNAMED"
+
+$EDITOR = "nvim"
+$TERM = "xterm-kitty"
