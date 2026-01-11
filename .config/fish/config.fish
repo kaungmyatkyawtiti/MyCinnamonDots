@@ -40,6 +40,7 @@ set -gx MAVEN_OPTS "--enable-native-access=ALL-UNNAMED"
 #set -gx ANDROID_HOME ~/Android/Sdk
 set -gx EDITOR nvim
 set -gx TERM xterm-kitty
+set -gx ZED_WINDOW_DECORATIONS server
 
 # Set FZF behavior
 set -gx FZF_DEFAULT_COMMAND 'fd --type file --follow --hidden --exclude .git'
