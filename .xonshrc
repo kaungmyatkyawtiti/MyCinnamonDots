@@ -28,6 +28,8 @@ aliases['brave']     = ['brave-browser']
 aliases['calendar']  = ['calcurse']
 aliases['less']      = ['less', '-NRX']
 
+aliases['lzd']      = ['lazydocker']
+
 # Effects
 aliases['rain']      = [
     'terminal-rain',
