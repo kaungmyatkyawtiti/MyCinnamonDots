@@ -107,6 +107,7 @@ alias mytest='cd ~/MyTestingProjects/'
 alias rusttest='cd ~/MyTestingProjects/rust_testings/'
 alias jstest='cd ~/MyTestingProjects/javascript_testings/'
 alias javatest='cd ~/MyTestingProjects/java_testings/'
+alias dbtest='cd ~/MyTestingProjects/db_testings/'
 alias mypj='cd ~/MyProjects/'
 alias mydots='cd ~/MyCinnamonDots/'
 alias phpdir='cd /var/www/html/'
@@ -116,6 +117,7 @@ alias less='less -NRX'
 alias gitfiles='cd ~/MyGitFiles/'
 alias rain='terminal-rain --rain-color white --lightning-color yellow'
 alias lzd='lazydocker'
+alias gg='google-chrome'
 
 # =========================
 # FUNCTIONS
