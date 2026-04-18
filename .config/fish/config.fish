@@ -34,7 +34,8 @@ set -gx FZF_DEFAULT_OPTS \
 
 set -gx fish_user_paths ~/.config/composer/vendor/bin $fish_user_paths
 set -gx JAVA_HOME /usr/lib/jvm/java-latest-openjdk
-set -gx MAVEN_OPTS "--enable-native-access=ALL-UNNAMED"
+# set -gx MAVEN_OPTS "--enable-native-access=ALL-UNNAMED"
+set -x MAVEN_OPTS "--sun-misc-unsafe-memory-access=allow --enable-final-field-mutation=ALL-UNNAMED"
 
 # Set global env variables
 #set -gx ANDROID_HOME ~/Android/Sdk
