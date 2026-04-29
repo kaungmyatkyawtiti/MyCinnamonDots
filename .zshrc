@@ -19,7 +19,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JAVA_HOME=/usr/lib/jvm/java-latest-openjdk
 # export MAVEN_OPTS="--enable-native-access=ALL-UNNAMED"
-export MAVEN_OPTS "--sun-misc-unsafe-memory-access=allow --enable-final-field-mutation=ALL-UNNAMED"
+export MAVEN_OPTS="--sun-misc-unsafe-memory-access=allow --enable-final-field-mutation=ALL-UNNAMED"
 
 # =========================
 # ZSH THEME & BEHAVIOR
