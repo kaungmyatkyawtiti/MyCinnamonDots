@@ -1,3 +1,4 @@
+-- ~/.config/yazi/init.lua
 function Linemode:size_and_mtime()
 	local time = math.floor(self._file.cha.mtime or 0)
 	if time == 0 then
@@ -12,15 +13,6 @@ function Linemode:size_and_mtime()
 	return string.format("%s %s", size and ya.readable_size(size) or "-", time)
 end
 
-require("full-border"):setup({
-	-- Available values: ui.Border.PLAIN, ui.Border.ROUNDED
-	type = ui.Border.ROUNDED,
-})
-
-require("smart-enter"):setup({
-	open_multi = true,
-})
-
 Status:children_add(function(self)
 	local h = self._current.hovered
 	if h and h.link_to then
@@ -32,7 +24,7 @@ end, 3300, Status.LEFT)
 
 Status:children_add(function()
 	local h = cx.active.current.hovered
-	if h == nil or ya.target_family() ~= "unix" then
+	if not h or ya.target_family() ~= "unix" then
 		return ""
 	end
 
@@ -50,3 +42,12 @@ Header:children_add(function()
 	end
 	return ui.Span(ya.user_name() .. "@" .. ya.host_name() .. ":"):fg("blue")
 end, 500, Header.LEFT)
+
+require("full-border"):setup({
+	-- Available values: ui.Border.PLAIN, ui.Border.ROUNDED
+	type = ui.Border.ROUNDED,
+})
+
+require("smart-enter"):setup({
+	open_multi = true,
+})

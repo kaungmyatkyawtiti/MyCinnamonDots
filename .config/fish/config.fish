@@ -40,7 +40,7 @@ set -x MAVEN_OPTS "--sun-misc-unsafe-memory-access=allow --enable-final-field-mu
 # Set global env variables
 #set -gx ANDROID_HOME ~/Android/Sdk
 set -gx EDITOR nvim
-set -gx TERM xterm-kitty
+#set -gx TERM xterm-kitty
 set -gx ZED_WINDOW_DECORATIONS server
 
 # Set FZF behavior
@@ -112,3 +112,6 @@ if not string match -q -- $PNPM_HOME $PATH
     set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+# opencode
+fish_add_path /home/nott_eucalyptus/.opencode/bin

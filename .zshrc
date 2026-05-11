@@ -151,3 +151,9 @@ compinit
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Override the slow system handler with a fast local one
+command_not_found_handler() {
+    echo "zsh: $1: command not found" >&2
+    return 127
+}
